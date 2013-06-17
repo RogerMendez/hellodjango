@@ -1,0 +1,88 @@
+{# encoding=utf-8 #}
+<!DOCType HTML>
+<html lang="es">
+    <head>
+        <title>Reporte</title>
+        <link rel="stylesheet" href='{{ STATIC_URL }}content/css/bootstrap.css'>
+        <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}content/ico/apple-touch-icon-57-precomposed.png">
+
+        <style>
+            @page {
+                size: {{ pagesize }};
+                margin-left: 2.5cm;
+                margin-top: 2cm;
+                margin-right: 1cm;
+                @frame footer {
+                    -pdf-frame-content: footerContent;
+                    bottom: 0cm;
+                    margin-left: 9cm;
+                    margin-right: 9cm;
+                    height: 1cm;
+                }
+            }
+            header h2{
+                color: #26AAAF;
+                display: block;
+                font-family: courier;
+                font-size: 35px;
+                vertical-align: bottom;
+                margin-bottom: 0px;
+            }
+            .barra{
+                font-size: 2px;
+                background: #000000;
+                line-height: 1em;
+            }
+            h1{
+                font-family: Helvetica;
+                font-size: 20px;
+            }
+            .consulta{
+                border: solid red 1px;
+            }
+            table {
+                max-width: 100%;
+                background-color: transparent;
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+            .table th, .table td {
+                padding: 2px;
+                line-height: 20px;
+                text-align: left;
+                vertical-align: top;
+                border-top: 1px solid #000000;
+            }
+            .table-bordered th, .table-bordered td {
+                border-left: 1px solid #000000;
+                border-right: 1px solid #000000;
+                border-bottom: 1px solid #000000;
+            }
+            .table th{
+                color: #ffffff;
+                padding: 5px;
+                font-size: 18px;
+                background: #0088cc ;
+            }
+            .table td{
+                font-size: 12px;
+                vertical-align: middle;
+            }
+            .table tbody tr.success td {
+                background-color: #dff0d8;
+                font-size: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h2 class="titulo">SAPEC</h2>
+        </header>
+        <div class="barra">s</div>
+        <section class="consulta">
+            {% block cuerpo %}
+                <h1>hola</h1>
+            {% endblock %}
+        </section>
+   </body>
+</html>

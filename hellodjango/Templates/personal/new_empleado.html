@@ -1,0 +1,60 @@
+{# encoding:utf-8 #}
+{% extends 'formupload.html' %}
+{% block dajax %}
+    {% load dajaxice_templatetags %}
+{% endblock %}
+{% block title %}
+    Nuevo Empleado
+{% endblock%}
+{% block ajax %}
+    <script src="{{ STATIC_URL }}dajax/jquery.dajax.core.js">
+    </script>
+    {% dajaxice_js_import %}
+{% endblock %}
+{% block url %}contrato/cargo{% endblock %}
+{% block legend %}
+    Nuevo Empleado
+{% endblock %}
+{% block form %}
+    {{ formulario.as_p }}
+    <script>
+        $('#id_ci').change(function(){
+            Dajaxice.personal.employee(Dajax.process,{'carnet':$('#id_ci').val()});
+        });
+        function seleccionar(data){
+            var civil = "";
+            var sex = "";
+            var profe="";
+            for (var i=0; i < data.length; i++) {
+                civil = data[i].civil;
+                sex = data[i].sexo;
+                profe = data[i].profesion;
+            }
+            $("select option:selected").removeAttr('selected');
+            $("select option:selected").removeAttr('selected');
+            $("select option:selected").removeAttr('selected');
+            var selectOption = $('#id_estado_civil') ;
+			var _this = $(this).next().children("#id_estado_civi") ;
+            var op = "option[value="+civil+"]";
+            $(selectOption).find(op).attr("selected","selected");
+            sexo(sex);
+            profesion(profe);
+        }
+        function sexo(sex){
+            var sexooption = $('#id_sexo') ;
+			var _this = $(this).next().children("#id_sexo") ;
+            var op = "option[value="+sex+"]";
+            $(sexooption).find(op).attr("selected","selected");
+        }
+        function profesion(profe){
+            var sexooption = $('#id_profesion') ;
+			var _this = $(this).next().children("#id_profesion") ;
+            var op = "option[value="+profe+"]";
+            $(sexooption).find(op).attr("selected","selected");
+        }
+    </script>
+{% endblock %}
+{% block formenviar %}
+    Guardar
+{% endblock %}
+{% block formcancelar %}personal{% endblock %}

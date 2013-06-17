@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+Planificacion Unidad
+{% endblock%}
+{% block url %}unidad/option{% endblock %}
+{% block cuerpo %}
+<section class="consulta">
+    <h2>Planificacion</h2>
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Descripcion</th>
+            <th>Cantidad</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for plani in planificacion %}
+            <tr>
+                <td></td>
+                <td>{{ plani.descripcion }}</td>
+                <td>{{ plani.cantidad }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}
