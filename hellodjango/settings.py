@@ -60,7 +60,7 @@ MEDIA_ROOT = os.path.join(RUTA_PROYECTO,'carga')
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
 #MEDIA_URL = 'http://127.0.0.1:90/media/'
 #MEDIA_URL = 'http://127.0.0.1:90/media/'
-MEDIA_URL = '/media/'
+MEDIA_URL = 'http://agile-bayou-8046.herokuapp.com/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -71,7 +71,7 @@ STATIC_ROOT = ''
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 
-STATIC_URL = '/static/'
+STATIC_URL = 'http://agile-bayou-8046.herokuapp.com/static/'
 #STATIC_URL = 'http://127.0.0.1:90/static/'
 #STATIC_URL = 'http://192.168.1.6:90/static/'
 
