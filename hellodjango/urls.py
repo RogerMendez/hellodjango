@@ -9,6 +9,8 @@ dajaxice_autodiscover()
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    
+    
     url(dajaxice_config.dajaxice_url, include('dajaxice.urls')),
     url(r'^media/(?P<path>.*)$','django.views.static.serve', {'document_root':settings.MEDIA_ROOT,} ),
     
@@ -77,6 +79,9 @@ urlpatterns = patterns('',
     url(r'^report/unidad/pdf/(?P<pdf>\d+)/$', 'organizacion.views.unidad_pdf'),
     url(r'^report/cargo/pdf/(?P<pdf>\d+)/$', 'organizacion.views.cargos_pdf'),
     url(r'^report/cargo/noempleado/(?P<pdf>\d+)/$', 'organizacion.views.cargos_no_empleado'),
+
+
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
     )# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #urlpatterns += staticfiles_urlpatterns()
