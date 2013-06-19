@@ -25,6 +25,7 @@ urlpatterns = patterns('',
     url(r'^organizacion/$', 'organizacion.views.index_organizacion'),
     url(r'^unidad/new/$', 'organizacion.views.nueva_unidad'),
     url(r'^unidad/option/$', 'organizacion.views.option_unidad'),
+    url(r'^unidad/update/(?P<id_unidad>\d+)/$', 'organizacion.views.update_unidad'),
     #url(r'^show/$', 'ejemplo.views.show_persona'),
     url(r'^unidad/planificacion/(?P<id_unidad>\d+)/$', 'organizacion.views.unidad_plani'),
     #planificacion
