@@ -15,9 +15,23 @@
 {% block legend %}
     Nuevo Empleado
 {% endblock %}
+{% block calendar %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}calendario/calendar.css"/>
+    <script src="{{ STATIC_URL }}calendario/jquery_min.js"></script>
+    <script src="{{ STATIC_URL }}calendario/jquery_ui.js"></script>
+    <script src="{{ STATIC_URL }}calendario/jquery.ui.datepicker-es.js"></script>
+    <script type="text/javascript">
+        $('#id_fecha_nac').addClass('hasDatepicker')
+	    $(function() {
+		    $('#id_fecha_nac').datepicker({dateFormat: 'dd/mm/yy', changeMonth: true, changeYear: true, yearRange: '-70:+0'});
+	    });
+	</script>
+{% endblock %}
 {% block form %}
     {{ formulario.as_p }}
+
     <script>
+
         $('#id_ci').change(function(){
             Dajaxice.personal.employee(Dajax.process,{'carnet':$('#id_ci').val()});
         });
